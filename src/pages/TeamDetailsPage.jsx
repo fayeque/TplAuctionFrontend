@@ -5,7 +5,10 @@ import { useParams, useNavigate } from "react-router-dom"
 import { Shield, DollarSign, Users, ArrowLeft, User } from "lucide-react"
 import { toast } from "sonner"
 
+// const API_BASE_URL = "http://localhost:5000"
 const API_BASE_URL = "https://tplauctionbackend.onrender.com"
+
+
 
 export default function TeamDetailsPage() {
   const { teamId } = useParams()
@@ -93,54 +96,54 @@ export default function TeamDetailsPage() {
         </button>
 
         {/* Team Header */}
-        <div className="bg-gradient-to-br from-slate-800 to-slate-700 rounded-lg shadow-xl p-6 lg:p-8 mb-8 border border-slate-600">
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+        <div className="bg-gradient-to-br from-slate-800 to-slate-700 rounded-lg shadow-xl p-4 lg:p-5 mb-6 border border-slate-600">
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
             {/* Team Logo */}
             <div className="flex-shrink-0">
               {team.teamLogo ? (
                 <img
                   src={`https://tplauctionbackend.onrender.com${team.teamLogo}`}
                   alt={`${team.teamName} logo`}
-                  className="w-24 h-24 lg:w-32 lg:h-32 rounded-full object-cover border-4 border-amber-500 shadow-lg"
+                  className="w-16 h-16 lg:w-20 lg:h-20 rounded-full object-cover border-2 border-amber-500 shadow-lg"
                 />
               ) : (
-                <div className="w-24 h-24 lg:w-32 lg:h-32 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center border-4 border-amber-500 shadow-lg">
-                  <Shield className="w-12 h-12 lg:w-16 lg:h-16 text-white" />
+                <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center border-2 border-amber-500 shadow-lg">
+                  <Shield className="w-8 h-8 lg:w-10 lg:h-10 text-white" />
                 </div>
               )}
             </div>
 
             {/* Team Info */}
             <div className="flex-1">
-              <h1 className="text-3xl lg:text-4xl font-bold text-white mb-2">{team.teamName}</h1>
-              <p className="text-slate-300 text-lg mb-4">Owner: {team.ownerName}</p>
+              <h1 className="text-2xl lg:text-3xl font-bold text-white mb-1">{team.teamName}</h1>
+              <p className="text-slate-300 text-base mb-3">Owner: {team.ownerName}</p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {/* Available Purse */}
-                <div className="bg-slate-900 bg-opacity-50 rounded-lg p-4 border border-slate-600">
-                  <div className="flex items-center gap-2 mb-1">
-                    <DollarSign className="w-5 h-5 text-amber-500" />
-                    <span className="text-sm text-slate-400">Available Purse</span>
+                <div className="bg-slate-900 bg-opacity-50 rounded-lg p-2.5 border border-slate-600">
+                  <div className="flex items-center gap-1.5 mb-0.5">
+                    <DollarSign className="w-4 h-4 text-amber-500" />
+                    <span className="text-xs text-slate-400">Available Purse</span>
                   </div>
-                  <p className="text-2xl font-bold text-white">{team.availablePurse}</p>
+                  <p className="text-lg font-bold text-white">{team.availablePurse}</p>
                 </div>
 
                 {/* Total Purse */}
-                <div className="bg-slate-900 bg-opacity-50 rounded-lg p-4 border border-slate-600">
-                  <div className="flex items-center gap-2 mb-1">
-                    <DollarSign className="w-5 h-5 text-green-500" />
-                    <span className="text-sm text-slate-400">Total Purse</span>
+                <div className="bg-slate-900 bg-opacity-50 rounded-lg p-2.5 border border-slate-600">
+                  <div className="flex items-center gap-1.5 mb-0.5">
+                    <DollarSign className="w-4 h-4 text-green-500" />
+                    <span className="text-xs text-slate-400">Total Purse</span>
                   </div>
-                  <p className="text-2xl font-bold text-white">{team.purseAmount}</p>
+                  <p className="text-lg font-bold text-white">{team.purseAmount}</p>
                 </div>
 
                 {/* Players Bought */}
-                <div className="bg-slate-900 bg-opacity-50 rounded-lg p-4 border border-slate-600">
-                  <div className="flex items-center gap-2 mb-1">
-                    <Users className="w-5 h-5 text-blue-500" />
-                    <span className="text-sm text-slate-400">Players Bought</span>
+                <div className="bg-slate-900 bg-opacity-50 rounded-lg p-2.5 border border-slate-600">
+                  <div className="flex items-center gap-1.5 mb-0.5">
+                    <Users className="w-4 h-4 text-blue-500" />
+                    <span className="text-xs text-slate-400">Players Bought</span>
                   </div>
-                  <p className="text-2xl font-bold text-white">{team.totalPlayersBought}</p>
+                  <p className="text-lg font-bold text-white">{team.totalPlayersBought}</p>
                 </div>
               </div>
             </div>
